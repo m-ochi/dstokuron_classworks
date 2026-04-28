@@ -211,8 +211,41 @@ ElasticSearch を使ったテキスト検索・集計の実践を扱う回。
 
 ---
 
+## browser_use_example.py — LLM Web エージェント
+
+**browser-use** ライブラリと大分大学内の Ollama サーバ（pythagoras）上の **qwen3** を組み合わせた LLM 駆動の Web 自動操作エージェント。
+
+- Playwright でブラウザを起動し、LLM が自律的に操作手順を決定・実行する
+- タスク例：「Google で大分大学を検索して公式サイトのタイトルを取得する」
+- コメントアウトされたタスク例：「食べログで大分駅 ラーメンを検索してお店の情報やレビューを収集する」
+
+**実行方法**
+
+```bash
+# venv を有効化してから実行
+source ../.venv/bin/activate
+python browser_use_example.py
+```
+
+**主な設定**
+
+| 項目 | 値 |
+|---|---|
+| LLM | `qwen3:latest`（Ollama） |
+| Ollama ホスト | `pythagoras.csis.oita-u.ac.jp:11434` |
+| メモリ | 無効（`enable_memory=False`） |
+
+**必要な依存パッケージ**
+
+```bash
+pip install browser-use langchain-ollama
+python -m playwright install chromium
+```
+
+---
+
 ## 環境
 
-- Python 3.12（Homebrew）/ 3.14
+- Python 3.13（uv / venv）
 - Jupyter Notebook
-- 主なライブラリ：pandas / numpy / matplotlib / seaborn / scikit-learn / networkx / gensim / PyTorch / PyTorch Geometric / selenium / atproto / elasticsearch
+- 主なライブラリ：pandas / numpy / matplotlib / seaborn / scikit-learn / networkx / gensim / PyTorch / PyTorch Geometric / selenium / atproto / elasticsearch / browser-use / langchain-ollama

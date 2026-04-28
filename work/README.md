@@ -28,6 +28,7 @@
 | ファイル | 説明 |
 |---|---|
 | [tabelog_crawler.py](tabelog_crawler.py) | Selenium による食べログ「大分市 ラーメン」クローラー |
+| [browser_use_example.py](browser_use_example.py) | browser-use + Ollama（qwen3）による LLM Web エージェント |
 
 ---
 
